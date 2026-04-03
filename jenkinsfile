@@ -51,7 +51,7 @@ stage('Download WAR') {
 
         stage('Build Docker Image') {
             steps {
-                sh 'docker build -t varsha0411/varshafullflow:v1 .'
+                sh 'docker build -t varsha0411/varshafullflow:latest .'
             }
         }
 		stage('Login to Docker Hub') {
@@ -68,7 +68,7 @@ stage('Download WAR') {
 
         stage('Push Docker Image') {
             steps {
-                sh 'docker push varsha0411/varshafullflow:v1'
+                sh 'docker push varsha0411/varshafullflow:latest'
             }
         }
 		        stage('K8s Deployment') {
