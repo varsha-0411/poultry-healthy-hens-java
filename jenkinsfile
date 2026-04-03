@@ -68,7 +68,7 @@ stage('Download WAR') {
 
         stage('Push Docker Image') {
             steps {
-                sh 'docker push varsha0411/srikanthfullflow:v1'
+                sh 'docker push varsha0411/varshafullflow:v1'
             }
         }
 		        stage('K8s Deployment') {
