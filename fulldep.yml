@@ -21,6 +21,7 @@ spec:
       containers:
       - name: myapp-container
         image: varsha0411/varalu:latest
+        imagePullPolicy: Always
         ports:
         - containerPort: 8080
 
