@@ -44,7 +44,7 @@ stage('Download WAR') {
     )]) {
         sh '''
         wget --user=$NEXUS_USER --password=$NEXUS_PASS \
-        http://18.212.248.111:8081/repository/maven-releases/com/poultry/healthy-hens/1.0/healthy-hens-1.0.war
+        http://18.212.248.111:8081/repository/maven-releases/com/poultry/healthy-hens/1.0.${BUILD_NUMBER}/healthy-hens-1.0.${BUILD_NUMBER}.war
         '''
     }
   }
@@ -52,7 +52,7 @@ stage('Download WAR') {
 
         stage('Build Docker Image') {
             steps {
-                sh 'docker build --no-cache -t varsha0411/varalu:latest .'
+                docker build --no-cache --build-arg WAR_FILE=healthy-hens-${BUILD_NUMBER}.war -t varsha0411/varaluw:latest .
             }
         }
 		stage('Login to Docker Hub') {
