@@ -52,7 +52,7 @@ stage('Download WAR') {
 
         stage('Build Docker Image') {
             steps {
-                sh 'docker build --no-cache --build-arg WAR_FILE=healthy-hens-${BUILD_NUMBER}.war -t varsha0411/varalu:latest .'
+                sh 'docker build --no-cache --build-arg WAR_FILE=healthy-hens/1.0.${BUILD_NUMBER}.war -t varsha0411/varalu:latest .'
             }
         }
 		stage('Login to Docker Hub') {
