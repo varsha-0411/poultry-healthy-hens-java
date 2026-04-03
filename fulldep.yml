@@ -35,7 +35,7 @@ metadata:
   name: myapp-service
 
 spec:
-  type: NodePort
+  type: LoadBalancer
 
   selector:
     app: myapp
@@ -44,4 +44,3 @@ spec:
     - name: http
       port: 80           # service port
       targetPort: 8080   # container port
-      nodePort: 30007    # external port (range: 30000-32767)
