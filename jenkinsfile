@@ -8,8 +8,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/lakshmansrikanth123/poultry-healthy-hens-java.git']])
-            }
+              checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/varsha-0411/poultry-healthy-hens-java.git']])            }
         }
 
         stage('Build') {
@@ -44,7 +43,7 @@ stage('Download WAR') {
     )]) {
         sh '''
         wget --user=$NEXUS_USER --password=$NEXUS_PASS \
-        http://54.164.76.0:8081/repository/maven-releases/com/poultry/healthy-hens/1.0/healthy-hens-1.0.war
+        http://54.146.208.57:8081/repository/maven-releases/com/poultry/healthy-hens/1.0/healthy-hens-1.0.war
         '''
     }
   }
